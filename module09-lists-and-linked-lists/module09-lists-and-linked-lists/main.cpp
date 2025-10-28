@@ -9,8 +9,9 @@ int main() {
     //*********** Integers ***************   
    // TODO: Create a singly linked list of integers
 	SinglyLinkedList<int> integerList;
-    integerList.insertAtHead(86);
-	integerList.insertAtHead(75);
+    integerList.insertAtHead(75);
+	integerList.insertAtHead(86);
+	integerList.insertAtTail(55);
 	integerList.insertAtTail(30);
 	integerList.insertAtTail(9);
 
@@ -19,7 +20,7 @@ int main() {
     integerList.displayList();
 
     // TODO: Remove an element from the integer list
-	integerList.removeByValue(75);
+	integerList.removeByValue(55);
 
     cout << "After removal: ";
     // TODO: Display linked list of integers
@@ -31,8 +32,8 @@ int main() {
     //*********** Strings ***************   
     // TODO: Create a singly linked list of strings
 	SinglyLinkedList<string> stringList;
-	stringList.insertAtHead("Call");
 	stringList.insertAtHead("Jenny");
+	stringList.insertAtHead("Call");
 	stringList.insertAtTail("now!");
 
     cout << "String List: ";
