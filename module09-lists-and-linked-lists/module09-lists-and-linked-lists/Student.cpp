@@ -30,16 +30,16 @@ double Student::getGPA() const {
 // TODO: Implement the setter methods
 
 void Student::setFirstname(const string& firstname) {
-	firstname = firstname;
+	this->firstname = firstname;
 }
 void Student::setLastname(const string& lastname) {
-	lastname = lastname;
+	this->lastname = lastname;
 }
 void Student::setBannerID(const string& BannerID) {
-	BannerID = BannerID;
+	this->BannerID = BannerID;
 }
 void Student::setGPA(double gpa) {
-	gpa = gpa;
+	this->gpa = gpa;
 }
 
 // TODO: Implement the method to display student information
