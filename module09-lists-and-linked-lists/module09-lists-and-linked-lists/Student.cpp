@@ -8,10 +8,10 @@ using namespace std;
 // TODO: Implement the constructor to initialize the student object
 
 Student::Student(string firstname, string lastname, string BannerID, double gpa) {
-	firstname = firstname;
-	lastname = lastname;
-	BannerID = BannerID;
-	gpa = gpa;
+	this->firstname = firstname;
+	this->lastname = lastname;
+	this->BannerID = BannerID;
+	this->gpa = gpa;
 }
 // TODO: Implement the getter methods
 string Student::getFirstname() const {
