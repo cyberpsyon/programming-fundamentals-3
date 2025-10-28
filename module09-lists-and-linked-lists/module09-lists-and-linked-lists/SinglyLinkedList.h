@@ -1,10 +1,11 @@
-// Author:
-// Date:
-// Purpose: 
+// Author: Ben Mickens
+// Date: 10-26-2025
+// Purpose: Definition and implementation of a template Singly Linked List class 
 #ifndef SINGLYLINKEDLIST_H
 #define SINGLYLINKEDLIST_H
 #include <iostream>
 using namespace std;
+
 // Template class for Node
 template <typename T>
 class Node {
@@ -19,15 +20,40 @@ template <typename T>
 class SinglyLinkedList {
 private:
     Node<T>* head;  // Pointer to the head of the list
+
 public:
     // Implemention of the constructor to initialize an empty list
     SinglyLinkedList() : head(nullptr) {}
+
     // Implemention of destructor to delete all nodes in the list
     ~SinglyLinkedList() {
         clear();  // Ensure all nodes are deleted when the list is destroyed
     }
     // TODO: Implement insertAtHead method
+    
+    void insertAtHead(T value) {
+        Node<T>* newNode = new Node<T>(value);
+        newNode->next = head;
+        head = newNode;
+		cout << "Element inserted at head: " << value << endl;
+	}
+
     // TODO: Implement insertAtTail method
+    
+    void insertAtTail(T value) {
+        Node<T>* newNode = new Node<T>(value);
+        if (!head) {
+            head = newNode;
+        } else {
+            Node<T>* current = head;
+            while (current->next != nullptr) {
+                current = current->next;
+            }
+            current->next = newNode;
+        }
+        cout << "Element inserted at tail: " << value << endl;
+	}
+
     // Implemention of the removeByValue method
     void removeByValue(T value) {
         if (!head) return;
@@ -64,5 +90,15 @@ public:
         cout << endl;
     }
     // TODO: Implement clear method
+    void clear() {
+        Node<T>* current = head;
+        while (current != nullptr) {
+            Node<T>* nodeToDelete = current;
+            current = current->next;
+            delete nodeToDelete;
+        }
+        head = nullptr;
+        cout << "List cleared." << endl;
+	}
 };
 #endif /* SINGLYLINKEDLIST_H */
